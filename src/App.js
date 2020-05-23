@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import Search from './Search';
+import { LearningObjectivesProvider, LearningObjectivesContext } from './LearningObjectivesContext';
+import LearningObjective from './LearningObjective';
 
 function App() {
+  // TODO: need to work out useeffect for when calling from api
+
+  // useEffect(() => {
+  //   console.log('here in useeffect')
+  //   // update when using an api
+  //   setState(data);
+  // }, [])
+
+  // const [state, setState] = useContext(LearningObjectivesContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <LearningObjectivesProvider>
+        <Switch>
+          <Route path="/learning-objective" component={LearningObjective} />
+          <Route exact path="/" component={Search} />
+        </Switch>
+      </LearningObjectivesProvider>
+
+    </Router>
   );
 }
 
