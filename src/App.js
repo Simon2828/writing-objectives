@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Search from './Search';
 import { LearningObjectivesProvider, LearningObjectivesContext } from './LearningObjectivesContext';
-import LearningObjective from './LearningObjective';
+import LearningObjective from './components/LearningObjective';
 
 function App() {
   // TODO: need to work out useeffect for when calling from api
