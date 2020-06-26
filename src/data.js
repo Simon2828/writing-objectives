@@ -27,7 +27,7 @@ const data = {
     byId : {
       "stepToSuccess1" : {
         id : "stepToSuccess1",
-        stepToSuccess : "Introduce the character",
+        stepToSuccess : "Introduce the main character",
         achieved : false
       },
       "stepToSuccess2" : {

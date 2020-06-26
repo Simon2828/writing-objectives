@@ -31,39 +31,21 @@ const LearningObjectivesProvider = (props) => {
           stepsToSuccess: ["stepToSuccess8","stepToSuccess9"],
           achieved: false
         },
-        // "learningObjective5": {
-        //   id: "learningObjective5",
-        //   title: "Write an ending.",
-        //   stepsToSuccess: ["stepToSuccess3","stepToSuccess6","stepToSuccess7"],
-        //   achieved: false
-        // },
-        // "learningObjective6": {
-        //   id: "learningObjective6",
-        //   title: "Write an ending.",
-        //   stepsToSuccess: ["stepToSuccess3","stepToSuccess6","stepToSuccess7"],
-        //   achieved: false
-        // },
-        // "learningObjective7": {
-        //   id: "learningObjective7",
-        //   title: "Write an ending.",
-        //   stepsToSuccess: ["stepToSuccess3","stepToSuccess6","stepToSuccess7"],
-        //   achieved: false
-        // },
-        // "learningObjective8": {
-        //   id: "learningObjective8",
-        //   title: "Write an ending.",
-        //   stepsToSuccess: ["stepToSuccess3","stepToSuccess6","stepToSuccess7"],
-        //   achieved: false
-        // },
+        "learningObjective5": {
+          id: "learningObjective5",
+          title: "Write a diary entry.",
+          stepsToSuccess: ["stepToSuccess10","stepToSuccess11","stepToSuccess12","stepToSuccess8"],
+          achieved: false
+        },
       },
-      allIds: ["learningObjective1", "learningObjective2", "learningObjective3", "learningObjective4"]
+      allIds: ["learningObjective1", "learningObjective2", "learningObjective3", "learningObjective4","learningObjective5"]
     },
 
     stepsToSuccess: {
       byId: {
         "stepToSuccess1": {
           id: "stepToSuccess1",
-          stepToSuccess: "Introduce the character.",
+          stepToSuccess: "Introduce the main character.",
           achieved: false
         },
         "stepToSuccess2": {
@@ -106,8 +88,33 @@ const LearningObjectivesProvider = (props) => {
           stepToSuccess: "Include time connectives.",
           achieved: false
         },
+        "stepToSuccess10": {
+          id: "stepToSuccess10",
+          stepToSuccess: "Describe feelings and emotions.",
+          achieved: false
+        },
+        "stepToSuccess11": {
+          id: "stepToSuccess11",
+          stepToSuccess: "Write in chronological order.",
+          achieved: false
+        },
+        "stepToSuccess12": {
+          id: "stepToSuccess12",
+          stepToSuccess: "Use time connectives.",
+          achieved: false
+        },
+        "stepToSuccess13": {
+          id: "stepToSuccess13",
+          stepToSuccess: "Begin the direct speech with a capital letter",
+          achieved: false
+        },
+        "stepToSuccess14": {
+          id: "stepToSuccess14",
+          stepToSuccess: "Use lowercase letters when....",
+          achieved: false
+        },
       },
-      allIds: ["stepToSuccess1", "stepToSuccess2", "stepToSuccess3", "stepToSuccess4", "stepToSuccess5", "stepToSuccess6", "stepToSuccess7", "stepToSuccess8"]
+      allIds: ["stepToSuccess1", "stepToSuccess2", "stepToSuccess3", "stepToSuccess4", "stepToSuccess5", "stepToSuccess6", "stepToSuccess7", "stepToSuccess8","stepToSuccess9", "stepToSuccess10", "stepToSuccess11", "stepToSuccess12"]
     },
     searchText: ''
   });

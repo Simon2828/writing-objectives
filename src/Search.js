@@ -8,17 +8,17 @@ const Search = () => {
   const [state, setState] = useContext(LearningObjectivesContext);
 
   function updateTextBox(e) {
-    setState({...state, searchText: e.target.value})
+    setState({ ...state, searchText: e.target.value })
   }
 
   const learningObjectiveTitles = state.learningObjectives.allIds.map(id => (
     state.learningObjectives.byId[id].title
-    ));
+  ));
 
   const index = Fuse.createIndex(
     state.learningObjectives.allIds,
     learningObjectiveTitles
-   )
+  )
 
   let options = {
     shouldSort: true,
@@ -34,24 +34,21 @@ const Search = () => {
   let fuse = new Fuse(learningObjectiveTitles, options, index);
   let result = fuse.search(state.searchText);
 
-  console.log({result})
-
-
   const inputText = useRef(null);
 
-    useEffect(() => {
-      inputText.current.focus();
-    }, []);
+  useEffect(() => {
+    inputText.current.focus();
+  }, []);
 
   return (
     <>
-    <input
-      ref={inputText}
-      onChange={updateTextBox}
-      placeholder="Search for Learning Objective..."
-    />
+      <input
+        ref={inputText}
+        onChange={updateTextBox}
+        placeholder="Search for Learning Objective..."
+      />
 
-    <SearchResults result={result} />
+      <SearchResults result={result} />
     </>
   )
 }
