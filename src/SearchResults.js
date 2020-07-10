@@ -1,18 +1,33 @@
 import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
-import {LearningObjectivesContext} from './LearningObjectivesContext'
+import {LearningObjectivesContext} from './LearningObjectivesContext';
+import styled from 'styled-components';
+
+const StyledSearchResults = styled.ul`
+  margin: 1rem;
+  font-size: 1.5rem;
+`
+
+const StyledLink = styled.li`
+  margin: 1rem;
+  > a {
+    text-decoration: none;
+  }
+`
 
 const SearchResults = ({ result}) => {
 
   const [state] = useContext(LearningObjectivesContext);
 
-  const objectives = result.map((title, i) => <li key={i}><Link to={{pathname: "/learning-objective", state: {objective: title, result: result}}} >{title.item}</Link></li>)
+  const objectives = result.map((title, i) => <StyledLink key={i}>
+    <Link to={{pathname: "/learning-objective", state: {objective: title, result: result}}} >{title.item}</Link>
+    </StyledLink>)
 
 
   return (
-    <ul>
+    <StyledSearchResults>
       {objectives}
-    </ul>
+    </StyledSearchResults>
   )
 }
 

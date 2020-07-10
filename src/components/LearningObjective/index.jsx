@@ -1,17 +1,55 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import StepsToSuccess from "../StepsToSuccess";
-import StepToSuccess from "../StepToSuccess";
+import StyledStepToSuccess from "../StepToSuccess";
 import { LearningObjectivesContext } from "../../LearningObjectivesContext";
+import styled from 'styled-components';
+
+const FlexWrapper = styled.ul`
+  display: flex;
+  margin: 5rem auto;
+  flex-direction: column;
+  width: 90%;
+  @media only screen and (min-width: 600px) {
+   width: 80%;
+   > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+   }
+}
+`
+
+const StyledLearningObjective = styled.h2`
+  border-bottom: rgb(228, 230, 232) 1px solid;
+  width: 100%;
+`
+
+const StyledAllDone = styled.div`
+  margin: 2rem;
+  font-size: 1.5rem;
+`
+
+const StyledButton = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
+`;
+
 
 const LearningObjective = (state) => {
   const [learningObjectives, setState] = useContext(LearningObjectivesContext);
   const learningObjective = state.location.state.objective.item;
   const learningObjectiveRefIndex = state.location.state.objective.refIndex;
-  // console.log('learningObjectives', learningObjectives)
-
+// is there a better way to update state of checkbox below?
   const handleCheckClick = (id) => {
-    // let individualStepToSuccess = stepsToSuccess.byId[id].achieved;
     setState((learningObjectives) => ({
       ...learningObjectives,
       stepsToSuccess: {
@@ -26,10 +64,8 @@ const LearningObjective = (state) => {
           },
         },
       },
-      // stepsToSuccess: { byId: { [id]: { achieved: true, id: id, stepToSuccess: learningObjectives.stepsToSuccess.byId[id].stepToSuccess } } },
     }));
   };
-  console.log("learningObjectives::", learningObjectives);
   const loId =
     learningObjectives.learningObjectives.allIds[learningObjectiveRefIndex];
 
@@ -41,10 +77,6 @@ const LearningObjective = (state) => {
     });
   };
 
-  console.log("allStepsToSuccessCompleted", allStepsToSuccessCompleted());
-
-  console.log(allStepsToSuccessCompleted);
-
   const stepsToSuccess = learningObjectives.learningObjectives.byId[
     loId
   ].stepsToSuccess.map((step, i) => {
@@ -53,7 +85,7 @@ const LearningObjective = (state) => {
       learningObjectives.stepsToSuccess.byId
     );
     return (
-      <StepToSuccess
+      <StyledStepToSuccess
         key={i}
         stepToSuccess={
           learningObjectives.stepsToSuccess.byId[step].stepToSuccess
@@ -66,17 +98,16 @@ const LearningObjective = (state) => {
     );
   });
 
-
   return (
-    <>
-      <h4>{learningObjective}</h4>
+    <FlexWrapper>
+      <StyledLearningObjective>{learningObjective}</StyledLearningObjective>
       <StepsToSuccess>{stepsToSuccess}</StepsToSuccess>
       {allStepsToSuccessCompleted() && (
         <Link to="/well-done">
-          <h5>All done?</h5><button>yes!</button>
+          <StyledAllDone>All done?</StyledAllDone><StyledButton>Yes!</StyledButton>
         </Link>
       )}
-    </>
+    </FlexWrapper>
   );
 };
 

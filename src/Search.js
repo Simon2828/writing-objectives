@@ -2,7 +2,23 @@ import Fuse from 'fuse.js';
 import React, { useState, useRef, useContext, useEffect } from 'react';
 import { LearningObjectivesContext } from './LearningObjectivesContext';
 import SearchResults from './SearchResults';
+import styled from 'styled-components';
 
+const Wrapper = styled.div`
+width: 90%;
+margin: 0 auto;
+@media only screen and (min-width: 600px) {
+  width: 80%;
+}
+
+`
+
+const StyledInput = styled.input`
+  font-size: x-large;
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
+  min-width: 80%;
+`
 
 const Search = () => {
   const [state, setState] = useContext(LearningObjectivesContext);
@@ -41,15 +57,13 @@ const Search = () => {
   }, []);
 
   return (
-    <>
-      <input
+    <Wrapper>
+      <StyledInput
         ref={inputText}
         onChange={updateTextBox}
-        placeholder="Search for Learning Objective..."
-      />
-
+        placeholder="Search for Learning Objective..."/>
       <SearchResults result={result} />
-    </>
+    </Wrapper>
   )
 }
 

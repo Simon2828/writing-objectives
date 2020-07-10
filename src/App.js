@@ -5,6 +5,7 @@ import Search from './Search';
 import { LearningObjectivesProvider, LearningObjectivesContext } from './LearningObjectivesContext';
 import LearningObjective from './components/LearningObjective';
 import WellDone from './components/WellDone';
+import StyledNavigation from './components/Navigation';
 
 function App() {
   // TODO: need to work out useeffect for when calling from api
@@ -20,6 +21,7 @@ function App() {
   return (
     <Router>
       <LearningObjectivesProvider>
+        <StyledNavigation />
         <Switch>
           <Route path="/learning-objective" component={LearningObjective} />
           <Route path="/well-done" component={WellDone} />
