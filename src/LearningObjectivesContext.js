@@ -34,11 +34,17 @@ const LearningObjectivesProvider = (props) => {
         "learningObjective5": {
           id: "learningObjective5",
           title: "Write a diary entry.",
-          stepsToSuccess: ["stepToSuccess10","stepToSuccess11","stepToSuccess12","stepToSuccess8"],
+          stepsToSuccess: ["stepToSuccess1","stepToSuccess2","stepToSuccess3","stepToSuccess4","stepToSuccess5","stepToSuccess10","stepToSuccess11","stepToSuccess12","stepToSuccess8"],
+          achieved: false
+        },
+        "learningObjective6": {
+          id: "learningObjective6",
+          title: "Write a recount.",
+          stepsToSuccess: ["stepToSuccess15","stepToSuccess16","stepToSuccess8","stepToSuccess9"],
           achieved: false
         },
       },
-      allIds: ["learningObjective1", "learningObjective2", "learningObjective3", "learningObjective4","learningObjective5"]
+      allIds: ["learningObjective1", "learningObjective2", "learningObjective3", "learningObjective4","learningObjective5","learningObjective6"]
     },
 
     stepsToSuccess: {
@@ -113,8 +119,23 @@ const LearningObjectivesProvider = (props) => {
           stepToSuccess: "Use lowercase letters when....",
           achieved: false
         },
+        "stepToSuccess15": {
+          id: "stepToSuccess15",
+          stepToSuccess: "Include who, what, where and when",
+          achieved: false
+        },
+        "stepToSuccess16": {
+          id: "stepToSuccess16",
+          stepToSuccess: "Describe people, places and things",
+          achieved: false
+        },
+        "stepToSuccess17": {
+          id: "stepToSuccess17",
+          stepToSuccess: "todo",
+          achieved: false
+        },
       },
-      allIds: ["stepToSuccess1", "stepToSuccess2", "stepToSuccess3", "stepToSuccess4", "stepToSuccess5", "stepToSuccess6", "stepToSuccess7", "stepToSuccess8","stepToSuccess9", "stepToSuccess10", "stepToSuccess11", "stepToSuccess12"]
+      allIds: ["stepToSuccess1", "stepToSuccess2", "stepToSuccess3", "stepToSuccess4", "stepToSuccess5", "stepToSuccess6", "stepToSuccess7", "stepToSuccess8","stepToSuccess9", "stepToSuccess10", "stepToSuccess11", "stepToSuccess12", "stepToSuccess13", "stepToSuccess14", "stepToSuccess15", "stepToSuccess16","stepToSuccess17"]
     },
     searchText: ''
   });

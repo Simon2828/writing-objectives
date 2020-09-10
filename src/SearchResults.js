@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
-import {LearningObjectivesContext} from './LearningObjectivesContext';
 import styled from 'styled-components';
 
 const StyledSearchResults = styled.ul`
@@ -15,9 +14,7 @@ const StyledLink = styled.li`
   }
 `
 
-const SearchResults = ({ result}) => {
-
-  const [state] = useContext(LearningObjectivesContext);
+const SearchResults = ({ result }) => {
 
   const objectives = result.map((title, i) => <StyledLink key={i}>
     <Link to={{pathname: "/learning-objective", state: {objective: title, result: result}}} >{title.item}</Link>

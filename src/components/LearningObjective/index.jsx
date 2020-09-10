@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 const FlexWrapper = styled.ul`
   display: flex;
-  margin: 5rem auto;
+  margin: 0.8rem auto 5rem;
   flex-direction: column;
   width: 90%;
   @media only screen and (min-width: 600px) {
