@@ -1,11 +1,16 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+// add learning objective ?
 
-const app = express();
+// edit learning objective
 
-const port = process.env.PORT || 5000;
+// edit step to success changes for specific lO being updated
+// and copy made for original which could be used elsewhere
 
-app.use(bodyParser.urlencoded({extended: true}));
+// login?
 
-app.use(bodyParser.json());
+// delete l0? (maybe just one that user has created)
+
+// getAll learning objectives (linked with below get All stepsToS?)
+
+// get All steps to success (linked with above getAll lOs)
+
 
