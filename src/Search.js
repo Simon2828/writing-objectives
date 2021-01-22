@@ -21,11 +21,8 @@ const StyledInput = styled.input`
 `
 
 const Search = () => {
-  const [state, setState] = useContext(LearningObjectivesContext);
 
-  function updateTextBox(e) {
-    setState({ ...state, searchText: e.target.value })
-  }
+  const [state, setState] = useContext(LearningObjectivesContext);
 
   const learningObjectiveTitles = state.learningObjectives.allIds.map(id => (
     state.learningObjectives.byId[id].title
@@ -53,15 +50,19 @@ const Search = () => {
   const inputText = useRef(null);
 
   useEffect(() => {
-    inputText.current.focus();
+      inputText.current.focus();
   }, []);
+
+  function updateTextBox(e) {
+    setState({ ...state, searchText: e.target.value })
+  }
 
   return (
     <Wrapper>
       <StyledInput
         ref={inputText}
         onChange={updateTextBox}
-        placeholder="Search for Learning Objective..."/>
+        placeholder="Search for Learning Objective..." />
       <SearchResults result={result} />
     </Wrapper>
   )

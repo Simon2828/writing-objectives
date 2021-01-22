@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^1.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "express": "^4.17.1",
     "fuse.js": "^5.0.10-beta",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -38,5 +40,6 @@
   "devDependencies": {
     "@types/node": "^14.11.2",
     "react-test-renderer": "^16.13.1"
-  }
+  },
+  "proxy": "http://localhost:3033"
 }
